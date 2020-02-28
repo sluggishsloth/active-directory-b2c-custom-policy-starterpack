@@ -828,7 +828,7 @@
           <DisplayName>Azure Active Directory</DisplayName>
           <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <!-- We need this here to suppress the SelfAsserted provider from invoking SSO on validation profiles. -->
           <IncludeInSso>false</IncludeInSso>
@@ -1061,7 +1061,7 @@
             <Item Key="UserMessageIfClaimsTransformationInvalidPhoneNumber">Please enter a valid phone number and country code.</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <DisplayClaims>
             <DisplayClaim DisplayControlReferenceId="phoneControl" />
@@ -1087,7 +1087,7 @@
             <Item Key="UserMessageIfClaimsTransformationInvalidPhoneNumber">Please enter a valid phone number and country code.</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <InputClaimsTransformations>
             <InputClaimsTransformation ReferenceId="CreateRandomUPNUserName" />
@@ -1119,7 +1119,7 @@
             <Item Key="ContentDefinitionReferenceId">phoneSignUpCollectEmailAddress</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <OutputClaims>
             <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="Verified.Email" Required="true" />
@@ -1140,7 +1140,7 @@
             <Item Key="ContentDefinitionReferenceId">changePhoneNumberVerifyEmailAddress</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <InputClaims>
             <InputClaim ClaimTypeReferenceId="strongAuthenticationEmailAddress" />
@@ -1163,7 +1163,7 @@
             <Item Key="ClaimsProviderSelectionDisplayType">TextLink</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <InputClaims>
             <InputClaim ClaimTypeReferenceId="email" />
@@ -1248,7 +1248,7 @@
             <Item Key="ContentDefinitionReferenceId">phoneInput</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <DisplayClaims>
             <DisplayClaim ClaimTypeReferenceId="countryCode" Required="true" />
@@ -1307,7 +1307,7 @@
             <Item Key="ContentDefinitionReferenceId">phoneSignIn</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <DisplayClaims>
             <DisplayClaim ClaimTypeReferenceId="verificationCode" Required="true" />
@@ -1330,7 +1330,7 @@
             <Item Key="ContentDefinitionReferenceId">emailDiscovery</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <IncludeInSso>false</IncludeInSso>
           <!-- The email address needs to be read only if pre-filled, otherwise the self-asserted attribute provider will not verify it-->
@@ -1353,7 +1353,7 @@
             <Item Key="ContentDefinitionReferenceId">resetemailpassword</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <OutputClaims>
             <OutputClaim ClaimTypeReferenceId="newPassword" Required="true" />
@@ -1531,8 +1531,8 @@
             <Item Key="SendTokenResponseBodyWithJsonNumbers">true</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
-            <Key Id="issuer_refresh_token_key" StorageReferenceId="B2C_1A_TokenEncryptionKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
+            <Key Id="issuer_refresh_token_key" StorageReferenceId="B2C_1A_OTPEncryption" />
           </CryptographicKeys>
           <InputClaims />
           <OutputClaims />
