@@ -1402,15 +1402,15 @@
           <DisplayName>Local Account SignIn</DisplayName>
           <Protocol Name="OpenIdConnect" />
           <Metadata>
-            <Item Key="client_id">ProxyIdentityExperienceFrameworkAppId</Item>
-            <Item Key="IdTokenAudience">IdentityExperienceFrameworkAppId</Item>
+            <Item Key="client_id">0648d6cd-9635-4d46-93c7-012aa9a289ac</Item>
+            <Item Key="IdTokenAudience">37a485a3-abc5-4e9d-849a-ea500b0f9cee</Item>
             <Item Key="UserMessageIfClaimsPrincipalDoesNotExist">We can't seem to find your account</Item>
             <Item Key="UserMessageIfInvalidPassword">Your password is incorrect</Item>
             <Item Key="UserMessageIfOldPasswordUsed">Looks like you used an old password</Item>
             <Item Key="DefaultMessage">Invalid email or password</Item>
             <Item Key="ProviderName">https://sts.windows.net/</Item>
-            <Item Key="METADATA">https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration</Item>
-            <Item Key="authorization_endpoint">https://login.microsoftonline.com/{tenant}/oauth2/token</Item>
+            <Item Key="METADATA">https://login.microsoftonline.com/thehailife/.well-known/openid-configuration</Item>
+            <Item Key="authorization_endpoint">https://login.microsoftonline.com/thehailife/oauth2/token</Item>
             <Item Key="response_types">id_token</Item>
             <Item Key="response_mode">query</Item>
             <Item Key="scope">email openid</Item>
@@ -1419,8 +1419,8 @@
             <Item Key="HttpBinding">POST</Item>
           </Metadata>
           <InputClaims>
-            <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="ProxyIdentityExperienceFrameworkAppId" />
-            <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="IdentityExperienceFrameworkAppId" />
+            <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="0648d6cd-9635-4d46-93c7-012aa9a289ac" />
+            <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="37a485a3-abc5-4e9d-849a-ea500b0f9cee" />
             <InputClaim ClaimTypeReferenceId="email" PartnerClaimType="username" Required="true" />
             <InputClaim ClaimTypeReferenceId="password" Required="true" />
             <InputClaim ClaimTypeReferenceId="grant_type" DefaultValue="password" />
