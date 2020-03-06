@@ -92,6 +92,8 @@
         <UserHelpText>Enter Country</UserHelpText>
         <UserInputType>DropdownSingleSelect</UserInputType>
         <Restriction>
+          <Enumeration Text="United States(+1)" Value="US" />
+          <Enumeration Text="Canada(+1)" Value="CA" />
           <Enumeration Text="Albania(+355)" Value="AL" />
           <Enumeration Text="Algeria(+213)" Value="DZ" />
           <Enumeration Text="American Samoa(+1684)" Value="AS" />
@@ -128,7 +130,6 @@
           <Enumeration Text="Burundi(+257)" Value="BI" />
           <Enumeration Text="Cambodia(+855)" Value="KH" />
           <Enumeration Text="Cameroon(+237)" Value="CM" />
-          <Enumeration Text="Canada(+1)" Value="CA" />
           <Enumeration Text="Cape Verde(+238)" Value="CV" />
           <Enumeration Text="Cayman Islands(+1345)" Value="KY" />
           <Enumeration Text="Central African Republic(+236)" Value="CF" />
@@ -308,7 +309,6 @@
           <Enumeration Text="Ukraine(+380)" Value="UA" />
           <Enumeration Text="United Arab Emirates(+971)" Value="UA" />
           <Enumeration Text="United Kingdom(+44)" Value="GB" />
-          <Enumeration Text="United States(+1)" Value="US" />
           <Enumeration Text="Virgin Islands, U.S.(+1340)" Value="VI" />
           <Enumeration Text="Uruguay(+598)" Value="UY" />
           <Enumeration Text="Uzbekistan(+998)" Value="UZ" />
