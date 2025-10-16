@@ -35,7 +35,7 @@
     <ClaimsProvider>
       <DisplayName>Local Account SignIn</DisplayName>
       <TechnicalProfiles>
-         <TechnicalProfile Id="login-NonInteractive">
+        <TechnicalProfile Id="login-NonInteractive">
           <Metadata>
             <Item Key="client_id">ProxyIdentityExperienceFrameworkAppId</Item>
             <Item Key="IdTokenAudience">IdentityExperienceFrameworkAppId</Item>

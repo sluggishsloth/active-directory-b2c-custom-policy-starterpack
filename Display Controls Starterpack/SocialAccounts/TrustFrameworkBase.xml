@@ -156,9 +156,9 @@
         <UserHelpText>Specifies whether the user was authenticated at Social IDP or local account.</UserHelpText>
       </ClaimType>
 
-    
-      <!--claims for refresh token revocation-->
-      <ClaimType Id="refreshTokenIssuedOnDateTime">
+
+       <!--claims for refresh token revocation-->
+       <ClaimType Id="refreshTokenIssuedOnDateTime">
         <DisplayName>refreshTokenIssuedOnDateTime</DisplayName>
         <DataType>string</DataType>
         <AdminHelpText>Used to determine if the user should be permitted to reauthenticate silently via their existing refresh token.</AdminHelpText>
@@ -526,6 +526,7 @@
             <InputClaim ClaimTypeReferenceId="objectId" Required="true" />
           </InputClaims>
           <OutputClaims>
+
             <!-- Optional claims -->
             <OutputClaim ClaimTypeReferenceId="displayName" />
             <OutputClaim ClaimTypeReferenceId="otherMails" />
@@ -561,6 +562,14 @@
             <InputClaim ClaimTypeReferenceId="givenName" />
             <InputClaim ClaimTypeReferenceId="surname" />
           </InputClaims>
+          <DisplayClaims>
+            <!-- Optional claims. These claims are collected from the user and can be modified. If a claim is to be persisted in the directory after having been 
+                 collected from the user, it needs to be added as a PersistedClaim in the ValidationTechnicalProfile referenced below, i.e. 
+                 in AAD-UserWriteUsingAlternativeSecurityId. -->
+            <DisplayClaim ClaimTypeReferenceId="displayName" />
+            <DisplayClaim ClaimTypeReferenceId="givenName" />
+            <DisplayClaim ClaimTypeReferenceId="surname" />
+          </DisplayClaims>
           <OutputClaims>
             <!-- These claims are not shown to the user because their value is obtained through the "ValidationTechnicalProfiles"
                  referenced below, or a default value is assigned to the claim. A claim is only shown to the user to provide a 
@@ -590,7 +599,9 @@
           </Metadata>
           <IncludeInSso>false</IncludeInSso>
           <InputClaims>
+
             <InputClaim ClaimTypeReferenceId="alternativeSecurityId" />
+
             <InputClaim ClaimTypeReferenceId="userPrincipalName" />
 
             <!-- Optional claims. These claims are collected from the user and can be modified. Any claim added here should be updated in the
@@ -598,6 +609,12 @@
             <InputClaim ClaimTypeReferenceId="givenName" />
             <InputClaim ClaimTypeReferenceId="surname" />
           </InputClaims>
+          <DisplayClaims>
+            <!-- Optional claims. These claims are collected from the user and can be modified. Any claim added here should be updated in the
+                 ValidationTechnicalProfile referenced below so it can be written to directory after being updated by the user, i.e. AAD-UserWriteProfileUsingObjectId. -->
+            <DisplayClaim ClaimTypeReferenceId="givenName" />
+            <DisplayClaim ClaimTypeReferenceId="surname" />
+          </DisplayClaims>
           <OutputClaims>
             <!-- Required claims -->
             <OutputClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" DefaultValue="true" />
@@ -696,7 +713,7 @@
       </TechnicalProfiles>
     </ClaimsProvider>
 
-   
+    
   <!--claims provider for refresh token revocation-->
   <ClaimsProvider>
     <DisplayName>Refresh token journey</DisplayName>
